@@ -1,0 +1,146 @@
+/*!
+ * Bootstrap v4.1.3 (https://getbootstrap.com/)
+ * Copyright 2011-2018 The Bootstrap Authors
+ * Copyright 2011-2018 Twitter, Inc.
+ * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ */
+
+@import url("https://fonts.googleapis.com/css?family=Quicksand:400,700");
+
+@import "vendors/bootstrap/functions";
+@import "bootstrap_variables"; // duplicate BS variables to override values
+@import "vendors/bootstrap/mixins";
+// @import "vendors/bootstrap/root";
+@import "vendors/bootstrap/reboot";
+@import "vendors/bootstrap/type";
+@import "vendors/bootstrap/images";
+@import "vendors/bootstrap/code";
+@import "vendors/bootstrap/grid";
+@import "vendors/bootstrap/tables";
+@import "vendors/bootstrap/forms";
+@import "vendors/bootstrap/buttons";
+@import "vendors/bootstrap/transitions";
+@import "vendors/bootstrap/dropdown";
+@import "vendors/bootstrap/button-group";
+@import "vendors/bootstrap/input-group";
+@import "vendors/bootstrap/custom-forms";
+@import "vendors/bootstrap/nav";
+@import "vendors/bootstrap/navbar";
+@import "vendors/bootstrap/card";
+@import "vendors/bootstrap/breadcrumb";
+@import "vendors/bootstrap/pagination";
+@import "vendors/bootstrap/badge";
+@import "vendors/bootstrap/jumbotron";
+@import "vendors/bootstrap/alert";
+@import "vendors/bootstrap/progress";
+@import "vendors/bootstrap/media";
+@import "vendors/bootstrap/list-group";
+@import "vendors/bootstrap/close";
+@import "vendors/bootstrap/modal";
+@import "vendors/bootstrap/tooltip";
+@import "vendors/bootstrap/popover";
+@import "vendors/bootstrap/carousel";
+@import "vendors/bootstrap/utilities";
+@import "vendors/bootstrap/print";
+
+@keyframes scanning {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+.app {
+  display: flex;
+  flex-direction: column;
+  // simulate mobile screen size
+  max-width: 375px;
+  height: 667px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  &-header {
+    display: flex;
+    padding: 10px $grid-gutter-width;
+    background-color: #fafafa;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+    .header-icon {
+      margin-left: auto;
+    }
+  }
+
+  &-body {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    padding-right: $grid-gutter-width;
+    padding-left: $grid-gutter-width;
+
+    .phone-svg {
+      svg {
+        display: block;
+        margin-right: auto;
+        margin-left: auto;
+      }
+
+      &.scanning {
+        svg {
+          animation: scanning 1s infinite;
+        }
+      }
+    }
+
+    .app-notices {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 80px;
+      text-align: center;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+
+    .app-message {
+      .alert {
+        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+      }
+    }
+  }
+
+  &-footer {
+    .footer-inner {
+      padding: 20px $grid-gutter-width;
+      text-align: center;
+    }
+
+    .footer-bar {
+      min-height: 80px;
+      background-color: #fafafa;
+    }
+  }
+}
+
+// ----------------------------------------------------------------------
+// specific screen styles
+// ----------------------------------------------------------------------
+//
+// start screen
+.start-message {
+  text-align: center;
+}
+
+// scanning...
+.scanning {
+}

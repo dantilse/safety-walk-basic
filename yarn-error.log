@@ -1,0 +1,46 @@
+Arguments: 
+  /usr/local/bin/node /usr/local/bin/yarn install
+
+PATH: 
+  /Library/Frameworks/Python.framework/Versions/3.5/bin:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/usr/local/git/bin
+
+Yarn version: 
+  0.27.5
+
+Node version: 
+  9.2.0
+
+Platform: 
+  darwin x64
+
+npm manifest: 
+  {
+    "name": "safety-app",
+    "version": "0.1",
+    "description": "Building a safety app.",
+    "license": "MIT",
+    "devDependencies": {
+      "grunt": "~0.4.5",
+      "grunt-contrib-sass": "latest",
+      "grunt-postcss": "latest",
+      "autoprefixer": "latest",
+      "grunt-contrib-cssmin": "latest",
+      "grunt-contrib-uglify": "latest",
+      "grunt-contrib-watch": "latest"
+    },
+  }
+
+yarn manifest: 
+  No manifest
+
+Lockfile: 
+  No lockfile
+
+Trace: 
+  SyntaxError: /Users/User/Documents/Dan/Bootstrap_sites/safety-app/package.json: Unexpected token } in JSON at position 369
+      at JSON.parse (<anonymous>)
+      at /usr/local/Cellar/yarn/0.27.5/libexec/lib/yarn-cli.js:747:57
+      at Generator.next (<anonymous>)
+      at step (/usr/local/Cellar/yarn/0.27.5/libexec/lib/yarn-cli.js:91:30)
+      at /usr/local/Cellar/yarn/0.27.5/libexec/lib/yarn-cli.js:102:13
+      at <anonymous>
