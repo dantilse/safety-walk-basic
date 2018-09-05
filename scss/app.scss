@@ -5,7 +5,8 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-@import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+// @import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
+@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
 
 @import 'vendors/bootstrap/functions';
 @import 'vendors/bootstrap-overrides/bootstrap_variables'; // duplicate BS variables to override values
@@ -58,15 +59,19 @@
 }
 
 .app {
+  position: relative;
   display: flex;
   flex-direction: column;
-  // simulate mobile screen size
-  max-width: 375px;
-  height: 667px;
+  height: 100vh;
+  min-height: 640px;
   margin-right: auto;
   margin-left: auto;
   background-color: $body-bg;
-  border: 1px solid rgba(0, 0, 0, 0.1);
+
+  @media (min-width: 768px) {
+    max-width: 480px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
 
   &-header {
     display: flex;
@@ -79,11 +84,32 @@
     }
   }
 
+  &-menu {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: 10px $grid-gutter-width;
+    background-color: #fafafa;
+
+    nav {
+      margin-top: 20px;
+
+      a {
+        display: block;
+        padding-top: 10px;
+        padding-bottom: 10px;
+      }
+    }
+  }
+
   &-body {
     flex-grow: 1;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    justify-content: center;
     padding-right: $grid-gutter-width;
     padding-left: $grid-gutter-width;
 
