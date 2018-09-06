@@ -5,21 +5,20 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 
-// @import url('https://fonts.googleapis.com/css?family=Quicksand:400,700');
-@import url('https://fonts.googleapis.com/css?family=Roboto:400,700,900');
+@import url("https://fonts.googleapis.com/css?family=Roboto:400,700,900");
 
-@import 'vendors/bootstrap/functions';
-@import 'vendors/bootstrap-overrides/bootstrap_variables'; // duplicate BS variables to override values
-@import 'vendors/bootstrap/mixins';
+@import "vendors/bootstrap/functions";
+@import "vendors/bootstrap-overrides/bootstrap_variables"; // duplicate BS variables to override values
+@import "vendors/bootstrap/mixins";
 // @import "vendors/bootstrap/root";
-@import 'vendors/bootstrap/reboot';
-@import 'vendors/bootstrap/type';
-@import 'vendors/bootstrap/images';
+@import "vendors/bootstrap/reboot";
+@import "vendors/bootstrap/type";
+@import "vendors/bootstrap/images";
 // @import 'vendors/bootstrap/code';
 // @import 'vendors/bootstrap/grid';
 // @import 'vendors/bootstrap/tables';
-@import 'vendors/bootstrap/forms';
-@import 'vendors/bootstrap/buttons';
+@import "vendors/bootstrap/forms";
+@import "vendors/bootstrap/buttons";
 // @import 'vendors/bootstrap/transitions';
 // @import 'vendors/bootstrap/dropdown';
 // @import 'vendors/bootstrap/button-group';
@@ -32,31 +31,27 @@
 // @import 'vendors/bootstrap/pagination';
 // @import 'vendors/bootstrap/badge';
 // @import 'vendors/bootstrap/jumbotron';
-@import 'vendors/bootstrap-overrides/alert';
+@import "vendors/bootstrap-overrides/alert";
 // @import 'vendors/bootstrap/progress';
-@import 'vendors/bootstrap/media';
+@import "vendors/bootstrap/media";
 // @import 'vendors/bootstrap/list-group';
 // @import 'vendors/bootstrap/close';
 // @import 'vendors/bootstrap/modal';
 // @import 'vendors/bootstrap/tooltip';
 // @import 'vendors/bootstrap/popover';
 // @import 'vendors/bootstrap/carousel';
-@import 'vendors/bootstrap/utilities';
-@import 'vendors/bootstrap/print';
+@import "vendors/bootstrap/utilities";
+@import "vendors/bootstrap/print";
 
-@keyframes scanning {
-  0% {
-    transform: scale(1);
-  }
-
-  50% {
-    transform: scale(1.05);
-  }
-
-  100% {
-    transform: scale(1);
-  }
-}
+// App specific code
+@import "functions";
+@import "mixins";
+@import "animations";
+// Components
+@import "components/app-body";
+@import "components/app-footer";
+@import "components/app-header";
+@import "components/app-menu";
 
 .app {
   position: relative;
@@ -66,102 +61,6 @@
   margin-right: auto;
   margin-left: auto;
   background-color: $body-bg;
-
-  @media (min-width: 768px) {
-    max-width: 480px;
-    border: 1px solid rgba(0, 0, 0, 0.1);
-  }
-
-  @media (min-height: 740px) {
-    min-height: 1px;
-  }
-
-  &-header {
-    display: flex;
-    padding: 10px $grid-gutter-width;
-    background-color: #fafafa;
-    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-
-    .header-icon {
-      margin-left: auto;
-    }
-  }
-
-  &-menu {
-    position: absolute;
-    top: 0;
-    left: 0;
-    display: block;
-    width: 100%;
-    height: 100%;
-    padding: 10px $grid-gutter-width;
-    background-color: #fafafa;
-
-    nav {
-      margin-top: 20px;
-
-      a {
-        display: block;
-        padding-top: 10px;
-        padding-bottom: 10px;
-      }
-    }
-  }
-
-  &-body {
-    flex-grow: 1;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding-top: 20px;
-    padding-right: $grid-gutter-width;
-    padding-left: $grid-gutter-width;
-
-    .phone-svg {
-      svg {
-        display: block;
-        margin-right: auto;
-        margin-left: auto;
-      }
-
-      &.scanning {
-        svg {
-          animation: scanning 1s infinite;
-        }
-      }
-    }
-
-    .app-notices {
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      min-height: 80px;
-      text-align: center;
-
-      p {
-        margin-bottom: 0;
-      }
-    }
-
-    .app-message {
-      .alert {
-        box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-      }
-    }
-  }
-
-  &-footer {
-    .footer-inner {
-      padding: $grid-gutter-width $grid-gutter-width;
-      text-align: center;
-    }
-
-    .footer-bar {
-      min-height: 80px;
-      background-color: #fafafa;
-      border-top: 1px solid rgba(0, 0, 0, 0.1);
-    }
-  }
 }
 
 // ----------------------------------------------------------------------

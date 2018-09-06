@@ -1,0 +1,41 @@
+.app-body {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-top: 20px;
+  padding-right: $grid-gutter-width;
+  padding-left: $grid-gutter-width;
+
+  .phone-svg {
+    svg {
+      display: block;
+      margin-right: auto;
+      margin-left: auto;
+    }
+
+    &.scanning {
+      svg {
+        animation: scanning 1s infinite;
+      }
+    }
+  }
+
+  .app-notices {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80px;
+    text-align: center;
+
+    p {
+      margin-bottom: 0;
+    }
+  }
+
+  .app-message {
+    .alert {
+      box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+    }
+  }
+}

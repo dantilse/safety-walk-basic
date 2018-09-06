@@ -1,0 +1,12 @@
+.app-footer {
+  .footer-inner {
+    padding: $grid-gutter-width $grid-gutter-width;
+    text-align: center;
+  }
+
+  .footer-bar {
+    min-height: 80px;
+    background-color: #fafafa;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+  }
+}

@@ -1,0 +1,10 @@
+.app-header {
+  display: flex;
+  padding: 10px $grid-gutter-width;
+  background-color: #fafafa;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+
+  .header-icon {
+    margin-left: auto;
+  }
+}
