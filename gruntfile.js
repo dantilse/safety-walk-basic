@@ -1,13 +1,13 @@
 module.exports = function(grunt) {
   // Load tasks
-  grunt.loadNpmTasks('grunt-browser-sync');
+  grunt.loadNpmTasks("grunt-browser-sync");
   // grunt.loadNpmTasks("grunt-contrib-jshint");
-  grunt.loadNpmTasks('grunt-contrib-sass');
+  grunt.loadNpmTasks("grunt-contrib-sass");
   // grunt.loadNpmTasks("grunt-contrib-uglify");
-  grunt.loadNpmTasks('grunt-contrib-watch');
+  grunt.loadNpmTasks("grunt-contrib-watch");
 
   grunt.initConfig({
-    pkg: grunt.file.readJSON('package.json'),
+    pkg: grunt.file.readJSON("package.json"),
     // jshint: {
     //   options: {
     //     jshintrc: ".jshintrc"
@@ -17,12 +17,12 @@ module.exports = function(grunt) {
     sass: {
       dist: {
         options: {
-          style: 'compressed',
+          style: "compressed",
           compass: false,
           sourcemap: false
         },
         files: {
-          'build/app.min.css': ['scss/app.scss']
+          "css/app.min.css": ["scss/app.scss"]
         }
       }
     },
@@ -39,34 +39,34 @@ module.exports = function(grunt) {
     // },
     watch: {
       css: {
-        files: ['scss/*.scss'],
-        tasks: ['sass']
+        files: ["scss/*.scss"],
+        tasks: ["sass"]
       }
     },
     browserSync: {
       dev: {
         bsFiles: {
-          src: ['build/*.css', '*.html']
+          src: ["css/*.css", "*.html"]
         }
       },
       options: {
         watchTask: true,
-        server: './'
+        server: "./"
       }
     }
   });
 
   // Register tasks
   grunt.registerTask(
-    'default',
-    'The default Grunt task starts up a server on localhost:3000 and watches for style changes',
-    ['browserSync', 'watch']
+    "default",
+    "The default Grunt task starts up a server on localhost:3000 and watches for style changes",
+    ["browserSync", "watch"]
   );
 
-  grunt.registerTask('buildcss', 'Compile stylesheet', ['sass']);
+  grunt.registerTask("buildcss", "Compile stylesheet", ["sass"]);
 
-  grunt.registerTask('server', 'Task to run server on localhost:3000', [
-    'browserSync',
-    'watch'
+  grunt.registerTask("server", "Task to run server on localhost:3000", [
+    "browserSync",
+    "watch"
   ]);
 };
